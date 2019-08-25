@@ -56,7 +56,7 @@
    
          Version         Status  File
          --------------  ------  ------------------------------------
-      1. 20001010101000    --    /var/www/www_iot_demo/application/migrations/20001010101000_create_sample_tables.php 
+      1. 20001010101000    --    application/migrations/20001010101000_create_sample_tables.php 
          --------------  ------  ------------------------------------
          有 1 個 Migration 待執行。
    ```
