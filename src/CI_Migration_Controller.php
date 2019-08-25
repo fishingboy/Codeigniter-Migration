@@ -21,10 +21,10 @@ abstract class CI_Migration_Controller extends \CI_Controller
         $this->load->library('migration');
 
         // // 判斷換行字元
-        $this->_nl = (is_cli()) ? "\n" : "<br>";
+        $this->_nl = ($this->input->is_cli_request()) ? "\n" : "<br>";
 
         // 限定本機或 Command Line 使用
-        if ( ! is_cli() &&
+        if ( ! $this->input->is_cli_request() &&
             $_SERVER['REMOTE_ADDR'] != '127.0.0.1' &&
             $_SERVER['REMOTE_ADDR'] != '::1' &&
             false !== strpos($_SERVER['REMOTE_ADDR'], '192.168.')
