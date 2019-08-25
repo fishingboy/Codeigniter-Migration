@@ -3,7 +3,7 @@
 ## 使用方法
 1. 在 Codeigniter 專案目錄執行 `composer require fishingboy/codeigniter-migration:^1.0.0`
 
-2. 建立 application/controller/Seeder.php
+2. 建立 application/controller/Migration.php
     ```php
     <?php
     use fishingboy\ci_migration\CI_Migration_Controller;
