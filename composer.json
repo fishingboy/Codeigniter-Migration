@@ -1,0 +1,17 @@
+{
+    "name": "fishingboy/codeigniter-migration",
+    "description": "Codeigniter Migration",
+    "license": "Unlicense",
+    "authors": [
+        {
+            "name": "fishingboy",
+            "email": "et282523@hotmail.com"
+        }
+    ],
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "fishingboy\\ci_migration\\": "/src"
+        }
+    }
+}
