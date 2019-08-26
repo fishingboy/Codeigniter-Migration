@@ -41,12 +41,12 @@ abstract class CI_Migration_Controller extends \CI_Controller
     public function index()
     {
         echo "
-migration (資料庫遷移)
+migration
 
-php index.php migration          -- 看指令
-php index.php migration migrate  -- 執行
-php index.php migration rollback -- 回復到前一個 migration
-php index.php migration ls       -- 看目前 migration 的狀態
+php index.php migration          -- help 
+php index.php migration migrate  -- run migration
+php index.php migration rollback -- rollback to prev migration
+php index.php migration ls       -- check migrations list 
 
 ";
     }
@@ -88,7 +88,7 @@ php index.php migration ls       -- 看目前 migration 的狀態
         $count = 0;
         if ($version) {
             if ( ! isset($migrations[$version])) {
-                echo "你指定的 Migration version 不存在。";
+                echo "Migration version [$version] not exists !\n";
                 exit;
             }
 
@@ -147,7 +147,7 @@ php index.php migration ls       -- 看目前 migration 的狀態
         }
         echo "Migration Refresh ............. OK !{$this->_nl}";
         $this->benchmark->mark('finish');
-        echo "總共執行: " .  $this->benchmark->elapsed_time('start', 'finish') . "秒<br>";
+        echo "Total: " .  $this->benchmark->elapsed_time('start', 'finish') . "Second.{$this->_nl}";
     }
 
     /**
@@ -158,7 +158,7 @@ php index.php migration ls       -- 看目前 migration 的狀態
         $migrations = $this->migration->find_migrations();
         $i = $unfinished = 0;
         echo "     Version         Status  File\n";
-        echo "     --------------  ------  ------------------------------------\n";
+        echo "---  --------------  ------  ------------------------------------\n";
         foreach ($migrations as $migration) {
             $i++;
             $version = $migration['version'];
@@ -171,8 +171,8 @@ php index.php migration ls       -- 看目前 migration 的狀態
                 $unfinished++;
             }
         }
-        echo "     --------------  ------  ------------------------------------\n";
-        echo "     有 {$unfinished} 個 Migration 待執行。\n";
+        echo "---  --------------  ------  ------------------------------------\n";
+        echo "     {$unfinished} Migration not execute.\n";
     }
 
     /**
@@ -222,5 +222,3 @@ php index.php migration ls       -- 看目前 migration 的狀態
     }
 }
 
-/* End of file migration.php */
-/* Location: ./application/controllers/migration.php */
