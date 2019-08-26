@@ -1,21 +1,23 @@
 # Codeigniter-Migration
 
-## Installation
+## 安裝
+
 ```
 composer require fishingboy/codeigniter-migration
 ```
 
-## Usage
-1. create file: `application/controller/Migration.php` 
+## 使用方法
+
+2. 建立 application/controller/Migration.php
     ```php
     <?php
     use fishingboy\ci_migration\CI_Migration_Controller;
     class Migration extends CI_Migration_Controller {
     }
     ```
-2. create folder: `application/migrations` 
+3. 建立 application/migrations 資料夾
 
-3. create migration file :  application/migrations/20001010101000_create_sample_tables.php
+4. 建立 application/migrations/20001010101000_create_sample_tables.php
     ```php
     <?php defined('BASEPATH') OR exit('No direct script access allowed');
     
@@ -25,11 +27,11 @@ composer require fishingboy/codeigniter-migration
         {
             $sql = "CREATE TABLE `users` ( 
                       `id` INT NOT NULL AUTO_INCREMENT , 
-                      `name` VARCHAR(20) COMMENT 'name', 
+                      `name` VARCHAR(20) COMMENT '姓名', 
                       `created_at` DATETIME NOT NULL , 
                       `updated_at` DATETIME NOT NULL , 
                       PRIMARY KEY (`id`)
-                  ) COMMENT = 'user';";
+                  ) COMMENT = '記錄';";
             $this->db->query($sql);
         }
     
@@ -41,36 +43,36 @@ composer require fishingboy/codeigniter-migration
     }    
     ```
     
-4. use command line ，execute  `php index.php migration`
+5. 進入 command line 專案目錄底下，執行 `php index.php migration`
     ```shell
-    $ migration
-      
-      php index.php migration          -- help 
-      php index.php migration migrate  -- execute migrations
-      php index.php migration rollback -- rollback to prev migration
-      php index.php migration ls       -- check migrations list 
-
+    # php index.php migration
+    
+    migration (資料庫遷移)
+    
+    php index.php migration          -- 看指令
+    php index.php migration migrate  -- 執行
+    php index.php migration rollback -- 回復到前一個 migration
+    php index.php migration ls       -- 看目前 migration 的狀
     ```
     
-5. list of migrations
+6. 查看有哪些 migration
    ```shell
    $ php index.php migration ls
    
          Version         Status  File
-    ---  --------------  ------  ------------------------------------
-      1. 20190815002100    --    application/migrations/20190815002100_create_logs_tables.php 
-    ---  --------------  ------  ------------------------------------
-         0 Migration not execute.
-
+         --------------  ------  ------------------------------------
+      1. 20001010101000    --    application/migrations/20001010101000_create_sample_tables.php 
+         --------------  ------  ------------------------------------
+         有 1 個 Migration 待執行。
    ```
    
-6. execute migration
+6. 執行 migration
    ```shell
    $ php index.php migration migrate
    Migration Run : Migration_Create_sample_tables::up() ............. OK !
    ```
-   
-7. execute migration rollback
+
+7. 執行 migration rollback
    ```shell
    $ php index.php migration rollback
    Migration Run : Migration_Create_sample_tables::down() ............. OK !
