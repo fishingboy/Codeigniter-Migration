@@ -1,6 +1,7 @@
 {
     "name": "fishingboy/codeigniter-migration",
     "description": "Codeigniter Migration",
+    "keywords": ["codeigniter", "migration"],
     "license": "Unlicense",
     "authors": [
         {
