@@ -1,6 +1,9 @@
 {
     "name": "fishingboy/codeigniter-migration",
     "description": "Codeigniter Migration",
+    "require": {
+        "php": "^5.3"
+    },
     "keywords": ["codeigniter", "migration"],
     "license": "Unlicense",
     "authors": [
