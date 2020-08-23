@@ -1,5 +1,10 @@
 # Codeigniter-Migration
 
+## Language
+
+[en-us](README.md) / 
+[zh-tw](README-zh-tw.md)
+
 ## Installation
 ```
 composer require fishingboy/codeigniter-migration
@@ -83,7 +88,4 @@ composer require fishingboy/codeigniter-migration
    Migration Run : Migration_Create_sample_tables::down() ............. OK !
    ```
 
-## Language
-[en-us](README.md) / 
-[zh-tw](README-zh-tw.md)
 

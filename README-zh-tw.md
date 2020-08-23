@@ -1,5 +1,11 @@
 # Codeigniter-Migration ()
 
+## 語言
+
+[en-us](README.md) / 
+[zh-tw](README-zh-tw.md)
+
+
 ## 安裝
 
 ```
@@ -82,9 +88,4 @@ composer require fishingboy/codeigniter-migration
    $ php index.php migration rollback
    Migration Run : Migration_Create_sample_tables::down() ............. OK !
    ```
-
-## 語言
-
-[en-us](README.md) / 
-[zh-tw](README-zh-tw.md)
 
