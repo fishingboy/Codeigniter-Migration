@@ -83,6 +83,7 @@ composer require fishingboy/codeigniter-migration
    Migration Run : Migration_Create_sample_tables::down() ............. OK !
    ```
 
-## 中文版 README
+## README
+[en-us](README.md) / 
+[zh-tw](README-zh-tw.md)
 
-[請點這裡](README-zh-tw.md)

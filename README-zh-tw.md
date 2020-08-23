@@ -1,4 +1,4 @@
-# Codeigniter-Migration
+# Codeigniter-Migration ()
 
 ## 安裝
 
@@ -83,6 +83,7 @@ composer require fishingboy/codeigniter-migration
    Migration Run : Migration_Create_sample_tables::down() ............. OK !
    ```
 
-## English README
+## README
+[en-us](README.md) / 
+[zh-tw](README-zh-tw.md)
 
-[here](README-zh-tw.md)
