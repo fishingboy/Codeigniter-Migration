@@ -82,3 +82,7 @@ composer require fishingboy/codeigniter-migration
    $ php index.php migration rollback
    Migration Run : Migration_Create_sample_tables::down() ............. OK !
    ```
+
+## 中文版 README
+
+[請點這裡](README-zh-tw.md)
