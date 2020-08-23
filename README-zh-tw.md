@@ -8,13 +8,18 @@ composer require fishingboy/codeigniter-migration
 
 ## 使用方法
 
-2. 建立 application/controller/Migration.php
+1. 建立 application/controller/Migration.php
     ```php
     <?php
     use fishingboy\ci_migration\CI_Migration_Controller;
     class Migration extends CI_Migration_Controller {
     }
     ```
+2. 修改檔案: `application/config/Migration.php`   
+    ```php
+    $config['migration_enabled'] = true;
+    ```
+
 3. 建立 application/migrations 資料夾
 
 4. 建立 application/migrations/20001010101000_create_sample_tables.php
