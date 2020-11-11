@@ -43,11 +43,11 @@ abstract class CI_Migration_Controller extends \CI_Controller
         echo "
 migration
 
-php index.php migration          -- help 
-php index.php migration migrate  -- run migration
-php index.php migration rollback -- rollback to prev migration
-php index.php migration ls       -- check migrations list 
-
+php index.php migration                   -- help 
+php index.php migration migrate           -- run migration
+php index.php migration rollback          -- rollback to prev migration
+php index.php migration ls                -- check migrations list 
+php index.php migration upgrade_migration -- update migration db schema 
 ";
     }
 
