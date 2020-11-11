@@ -214,6 +214,66 @@ php index.php migration ls       -- check migrations list
         ], $method);
     }
 
+    public function upgrade_migration()
+    {
+        $migration_fields = $this->db->list_fields('migrations');
+        if (in_array("run", $migration_fields)) {
+            echo "已經是新版的 Migration 了。";
+            return false;
+        }
+
+        echo "開始更新 Migration 資料表...<br>\n";
+
+        // 新增 file, run 欄位
+        $varchar = ($this->db->dbdriver == 'sqlsrv') ? 'nvarchar' : 'varchar';
+        $text    = ($this->db->dbdriver == 'sqlsrv') ? 'ntext'    : 'text';
+        $fields = array (
+            'file' =>
+                array (
+                    'type' => $varchar,
+                    'constraint' => '255',
+                    'null' => false,
+                ),
+            'run' =>
+                array (
+                    'type' => 'int',
+                    'constraint' => '',
+                    'null' => false,
+                ),
+        );
+        $this->dbforge->add_column('migrations', $fields);
+
+        // 檢查是否成功
+        $this->db->data_cache = [];
+        $migration_fields = $this->db->list_fields('migrations');
+        if ( ! in_array("run", $migration_fields)) {
+            echo "Migrations 資料表更新失敗。<br>\n";
+            return false;
+        }
+
+        // 替換資料
+        $this->db->update("migrations", ['run' => 1]);
+        $migrations = $this->migration->find_migrations();
+        $this->db->truncate("migrations");
+        echo "<pre>migrations = " . print_r($migrations, TRUE). "</pre>";
+        foreach ($migrations as $migration) {
+            $version = $migration['version'];
+            $file = $migration['file'];
+            $run = $migration['run'];
+            $this->db->insert("migrations", [
+                'version' => $version,
+                'file'    => $file,
+                'run'     => 1,
+            ]);
+
+            if ($migration['run'] == 1) {
+                break;
+            }
+        }
+
+        echo "Migration 資料表轉換完成!!<br>\n";
+    }
+
     protected function _get_migration_name($migration)
     {
         $parts = explode('_', $migration);
