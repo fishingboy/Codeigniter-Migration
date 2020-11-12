@@ -21,14 +21,21 @@ composer require fishingboy/codeigniter-migration
     class Migration extends CI_Migration_Controller {
     }
     ```
-2. 修改檔案: `application/config/Migration.php`   
+2. 建立 `application/libraries/Migration.php` 
+    ```php
+    <?php
+    use fishingboy\ci_migration\CI_Migration_Library;
+    class CI_Migration extends CI_Migration_Library {
+    }   
+    ```
+3. 修改檔案: `application/config/Migration.php`   
     ```php
     $config['migration_enabled'] = true;
     ```
 
-3. 建立 application/migrations 資料夾
+4. 建立 application/migrations 資料夾
 
-4. 建立 application/migrations/20001010101000_create_sample_tables.php
+5. 建立 application/migrations/20001010101000_create_sample_tables.php
     ```php
     <?php defined('BASEPATH') OR exit('No direct script access allowed');
     
@@ -54,7 +61,7 @@ composer require fishingboy/codeigniter-migration
     }    
     ```
     
-5. 進入 command line 專案目錄底下，執行 `php index.php migration`
+6. 進入 command line 專案目錄底下，執行 `php index.php migration`
     ```shell
     # php index.php migration
     
@@ -66,7 +73,7 @@ composer require fishingboy/codeigniter-migration
     php index.php migration ls       -- 看目前 migration 的狀
     ```
     
-6. 查看有哪些 migration
+7. 查看有哪些 migration
    ```shell
    $ php index.php migration ls
    
@@ -77,13 +84,13 @@ composer require fishingboy/codeigniter-migration
          有 1 個 Migration 待執行。
    ```
    
-6. 執行 migration
+8. 執行 migration
    ```shell
    $ php index.php migration migrate
    Migration Run : Migration_Create_sample_tables::up() ............. OK !
    ```
 
-7. 執行 migration rollback
+9. 執行 migration rollback
    ```shell
    $ php index.php migration rollback
    Migration Run : Migration_Create_sample_tables::down() ............. OK !

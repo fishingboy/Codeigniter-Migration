@@ -18,14 +18,21 @@ composer require fishingboy/codeigniter-migration
     class Migration extends CI_Migration_Controller {
     }
     ```
-2. Modify file: `application/config/Migration.php`   
+2. Create file: `application/libraries/Migration.php` 
+    ```php
+    <?php
+    use fishingboy\ci_migration\CI_Migration_Library;
+    class CI_Migration extends CI_Migration_Library {
+    }   
+    ```
+3. Modify file: `application/config/Migration.php`   
     ```php
     $config['migration_enabled'] = true;
     ```
    
-3. Create folder: `application/migrations` 
+4. Create folder: `application/migrations` 
 
-4. Create migration file :  application/migrations/20001010101000_create_sample_tables.php
+5. Create migration file :  application/migrations/20001010101000_create_sample_tables.php
     ```php
     <?php defined('BASEPATH') OR exit('No direct script access allowed');
     
@@ -51,7 +58,7 @@ composer require fishingboy/codeigniter-migration
     }    
     ```
     
-5. Migration help:  `php index.php migration`
+6. Migration help:  `php index.php migration`
     ```shell
     $ php index.php migration
     
@@ -64,7 +71,7 @@ composer require fishingboy/codeigniter-migration
 
     ```
     
-6. List of migrations
+7. List of migrations
    ```shell
    $ php index.php migration ls
    
@@ -76,13 +83,13 @@ composer require fishingboy/codeigniter-migration
 
    ```
    
-7. Execute migration
+8. Execute migration
    ```shell
    $ php index.php migration migrate
    Migration Run : Migration_Create_sample_tables::up() ............. OK !
    ```
    
-8. Execute migration rollback
+9. Execute migration rollback
    ```shell
    $ php index.php migration rollback
    Migration Run : Migration_Create_sample_tables::down() ............. OK !

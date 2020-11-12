@@ -58,8 +58,6 @@ php index.php migration upgrade_migration -- update migration db schema
     {
         $migrations = $this->migration->find_migrations();
 
-
-
         $count = 0;
         foreach ($migrations as $version => $migration) {
             if ($migration['run'] == 0) {
