@@ -1,5 +1,8 @@
 # Codeigniter-Migration
 
+[![Packagist Version](https://img.shields.io/packagist/v/fishingboy/codeigniter-migration.svg)](https://packagist.org/packages/fishingboy/codeigniter-migration)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ## Language
 
 [en-us](README.md) / 
@@ -95,4 +98,7 @@ composer require fishingboy/codeigniter-migration
    Migration Run : Migration_Create_sample_tables::down() ............. OK !
    ```
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
