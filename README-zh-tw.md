@@ -1,6 +1,7 @@
 # Codeigniter-Migration
 
 [![Packagist Version](https://img.shields.io/packagist/v/fishingboy/codeigniter-migration.svg)](https://packagist.org/packages/fishingboy/codeigniter-migration)
+[![Downloads](https://img.shields.io/packagist/dt/fishingboy/codeigniter-migration.svg?label=Downloads)](https://packagist.org/packages/fishingboy/codeigniter-migration)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## 語言
