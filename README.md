@@ -14,17 +14,6 @@ Use it when you want to run, list, rollback, reset, and refresh CodeIgniter data
 [en-us](README.md) /
 [zh-tw](README-zh-tw.md)
 
-## Features
-
-- Composer-installable migration helper for CodeIgniter 3.
-- CLI commands for `migrate`, `rollback`, `ls`, `reset`, and `refresh`.
-- Shows which migration files have already run and which are pending.
-- Supports timestamp-style migration filenames such as `20001010101000_create_sample_tables.php`.
-- Runs each pending migration in order and records execution state in the `migrations` table.
-- Supports rolling back the latest migration or a specific migration version.
-- Includes an upgrade command for converting older migration table schemas.
-- Keeps migration classes compatible with CodeIgniter's `up()` and `down()` pattern.
-
 ## Why This Package?
 
 CodeIgniter has a built-in migration library, but many legacy CodeIgniter 3 projects still need a simple CLI workflow for day-to-day schema changes.
@@ -37,6 +26,17 @@ This package provides that thin layer:
 - Just a controller and library wrapper that make migrations easier to run from the command line.
 
 It is best suited for existing CodeIgniter 3 applications that already use `application/migrations` and want a clearer operational workflow.
+
+## Features
+
+- Composer-installable migration helper for CodeIgniter 3.
+- CLI commands for `migrate`, `rollback`, `ls`, `reset`, and `refresh`.
+- Shows which migration files have already run and which are pending.
+- Supports timestamp-style migration filenames such as `20001010101000_create_sample_tables.php`.
+- Runs each pending migration in order and records execution state in the `migrations` table.
+- Supports rolling back the latest migration or a specific migration version.
+- Includes an upgrade command for converting older migration table schemas.
+- Keeps migration classes compatible with CodeIgniter's `up()` and `down()` pattern.
 
 ## Installation
 
