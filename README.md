@@ -272,13 +272,6 @@ php index.php migration rollback 20001010101000
 
 Yes. Migration classes can use `$this->db->query($sql)` or CodeIgniter database utilities.
 
-## Roadmap
-
-- Improve README examples for different database drivers.
-- Add more migration command examples.
-- Add automated tests around migration status tracking.
-- Document common CodeIgniter configuration variants.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

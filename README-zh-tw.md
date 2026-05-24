@@ -272,13 +272,6 @@ php index.php migration rollback 20001010101000
 
 可以。Migration class 可以使用 `$this->db->query($sql)` 或 CodeIgniter database utilities。
 
-## Roadmap
-
-- 補充不同 database driver 的 README 範例。
-- 增加更多 migration 指令範例。
-- 為 migration 狀態追蹤補上自動化測試。
-- 補充常見 CodeIgniter migration 設定情境。
-
 ## 授權
 
 本專案採用 [MIT License](LICENSE) 授權。
